@@ -17,6 +17,7 @@ ecdsa
 fastapi
 fsspec
 greenlet
+google-genai
 h11
 h2
 hpack
