@@ -1,6 +1,10 @@
 from elasticsearch import Elasticsearch
-
-es = Elasticsearch("http://localhost:9200")
+from schemas.appschema import *
+setting=Settings()
+es = Elasticsearch(
+    setting.Elastic_endpoint,
+    api_key=setting.Elastic_apiKey
+)
 es.indices.create(index="resumes", ignore=400)
 
 

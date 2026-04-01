@@ -13,6 +13,8 @@ class Settings(BaseSettings):
     client_secret:str
     Redirect_url:str
     Auth_url:str
+    Elastic_endpoint:str
+    Elastic_apiKey:str
     token_url:str
     user_info_url:str
     google_acc_password:str

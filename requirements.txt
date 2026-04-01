@@ -37,7 +37,7 @@ pdfplumber
 pillow
 postgrest
 propcache
-psycopg2
+psycopg2-binary
 pyasn1
 pycparser
 pydantic
