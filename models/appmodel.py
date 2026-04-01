@@ -1,6 +1,6 @@
 import sqlalchemy
-from dbcon import url
-
+from schemas.appschema import  *
+setting=Settings()
 metadata = sqlalchemy.MetaData()
 users = sqlalchemy.Table(
     "users",
@@ -62,8 +62,6 @@ applications = sqlalchemy.Table(
     ),
     sqlalchemy.Column("applied_at", sqlalchemy.TIMESTAMP),
 )
-engine = sqlalchemy.create_engine(
-    url.replace("postgresql+asyncpg", "postgresql+psycopg2")
-)
+engine = sqlalchemy.create_engine(setting.DATABASE_URL_SYNC)
 metadata.create_all(engine)
 print("Tables Have Been created")
