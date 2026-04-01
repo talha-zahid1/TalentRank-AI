@@ -3,63 +3,93 @@ TalentRank AI
 TalentRank AI is a backend-only AI-powered resume screening system that automates resume parsing, skill extraction, candidate ranking, and job application workflows for recruiters.
 
 🚀 Features
-Resume upload (PDF/DOCX)
-Resume parsing and text extraction
-Skill extraction from resumes
-Candidate ranking based on job requirements
-Job posting management
-Recruiter and candidate role-based authentication (RBAC)
-Google OAuth login integration
-Resume search using Elasticsearch
-Email notification system:
-Welcome email on signup & Google login
-Confirmation email on resume upload
-Candidate selection email sent by recruiter
+Resume Upload: Supports PDF and DOCX formats.
+
+Resume Parsing: Automated text and skill extraction from resumes.
+
+Candidate Ranking: Smart ranking based on specific job requirements.
+
+Job Management: Full job posting and management system for recruiters.
+
+Authentication (RBAC): Role-based access control for Recruiters and Candidates.
+
+Google OAuth: Secure login integration using Google accounts.
+
+Resume Search: Fast and efficient searching powered by Elasticsearch.
+
+Email Notifications: * Welcome email on signup/Google login.
+
+Confirmation email upon resume upload.
+
+Selection emails triggered by recruiters.
+
 🛠️ Tech Stack
-FastAPI
-PostgreSQL
-Elasticsearch
-Docker
-OAuth 2.0 (Google Login)
+Framework: FastAPI
+
+Database: PostgreSQL
+
+Search Engine: Elasticsearch
+
+Containerization: Docker
+
+Auth: OAuth 2.0 (Google Login)
+
+Deployment: Vercel
+
 🔐 Authentication & Authorization
-Role-based access control:
-Recruiter
-Candidate/User
-Supports:
-Email/password authentication
-Google OAuth login
+RBAC: Distinct permissions for Recruiters and Candidates.
+
+Supported Methods: Standard Email/Password and Google OAuth 2.0.
+
 📧 Email Features
-Welcome email on:
-User registration
-Google login
-Candidate selection email triggered by recruiter
+Registration: Welcome emails for new users.
+
+Recruitment: Automated and recruiter-triggered candidate selection notifications.
+
 📌 API Overview
 Authentication
-POST /register
-POST /login
-GET /login-with-google
-GET /callback
+POST /register - Register new user
+
+POST /login - User login
+
+GET /login-with-google - Initiate Google Auth
+
+GET /callback - OAuth callback handler
+
 Candidate APIs
-POST /upload-resumes
-GET /my-resumes
-DELETE /del-resume/{file_id}
-POST /apply-job/{job_id}
+POST /upload-resumes - Upload a new resume
+
+GET /my-resumes - View uploaded resumes
+
+DELETE /del-resume/{file_id} - Delete a specific resume
+
+POST /apply-job/{job_id} - Apply for a job opening
+
 Recruiter APIs
-POST /job-post
-DELETE /del-job/{job_id}
-GET /job-posts
-POST /parse-resumes/{file_id}/{job_id}
-GET /resume-searching/{job_id}
-GET /send-selection-email/{user_email}
+POST /job-post - Create a job posting
+
+DELETE /del-job/{job_id} - Remove a job posting
+
+GET /job-posts - List all job posts
+
+POST /parse-resumes/{file_id}/{job_id} - Parse resume against job specs
+
+GET /resume-searching/{job_id} - Search resumes via Elasticsearch
+
+GET /send-selection-email/{user_email} - Trigger selection email
+
 ⚙️ System Workflow
-User registers or logs in (including Google OAuth)
-Candidate uploads resume
-System extracts and stores resume data
-Recruiter posts jobs
-Recruiter parses resumes against jobs
-Skills are matched and candidates are ranked
-Recruiter selects candidates
-Selection email is sent automatically
+Identity: User registers or logs in (Email or Google).
+
+Upload: Candidate uploads their resume (PDF/DOCX).
+
+Extraction: System extracts text and skills, then stores them.
+
+Job Posting: Recruiter creates a job description.
+
+Matching: Recruiter parses resumes against jobs; system ranks candidates based on skill match.
+
+Selection: Recruiter selects top candidates and the system sends automated selection emails.
 🚀 Deployment
 
 The project is deployed on Vercel.
