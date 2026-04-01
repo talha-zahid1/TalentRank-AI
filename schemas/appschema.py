@@ -5,8 +5,8 @@ class Settings(BaseSettings):
     AI_API_KEY:str
     supabase_url:str
     service_role_key:str
-    DATABASE_URL_SYNC:str
-    DATABASE_URL_ASYNC:str
+    DATABASE_URL_SYNC:str=""
+    DATABASE_URL_ASYNC:str=""
     client_id:str
     client_secret:str
     Redirect_url:str
