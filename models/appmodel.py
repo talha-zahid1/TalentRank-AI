@@ -62,6 +62,6 @@ applications = sqlalchemy.Table(
     ),
     sqlalchemy.Column("applied_at", sqlalchemy.TIMESTAMP),
 )
-engine = sqlalchemy.create_engine(setting.DATABASE_URL_SYNC)
+engine = sqlalchemy.create_engine(setting.DATABASE_URL_SYNC,connect_args={"sslmode": "require"})
 metadata.create_all(engine)
 print("Tables Have Been created")
