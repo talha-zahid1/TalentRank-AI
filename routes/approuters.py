@@ -18,6 +18,11 @@ redirect_url=setting.Redirect_url
 auth_url=setting.Auth_url
 token_url=setting.token_url
 user_info_url=setting.user_info_url
+@router.get("/")
+def wel():
+    return{
+        "message":"TalentRank AI API is Running Successfully!"
+    }
 @router.get("/login-with-google")
 def login():
     params={
