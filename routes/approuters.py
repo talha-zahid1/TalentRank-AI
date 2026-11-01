@@ -122,7 +122,7 @@ async def log(user: logi):
 async def rec(
     title: str = Form(...),
     description: str = Form(...),
-    skills: List[str] = Form(..., multiple=True),
+    skills: List[str] = Form(...),
     location: str = Form(...),
     salary: float = Form(...),
     employement_type: str = Form(...),
