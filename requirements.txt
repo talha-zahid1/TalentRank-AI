@@ -9,6 +9,7 @@ certifi
 cffi
 charset-normalizer
 click
+psycopg[binary]
 colorama
 cryptography
 databases
